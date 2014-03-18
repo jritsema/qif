@@ -4,11 +4,14 @@
   "description": "Library for working with .qif files",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "keywords": [
     "qif"
   ],
   "author": "John Ritsema",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.18.0"
+  }
 }
