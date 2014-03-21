@@ -3,6 +3,10 @@ qif
 
 *qif* is a simple js library for working with [Quicken Interchange Format (.qif)](http://en.wikipedia.org/wiki/Quicken_Interchange_Format) data.  I wrote this library because I needed to programatically create/write .qif files. For parsing/reading qif, see the [qif2json](https://www.npmjs.org/package/qif2json) library.  The reason I didn't add the functionality to that library is that it appears to have dependencies on python and I wanted something really simple in pure js.  The library currently only supports outputting qif from a js object model.
 
+### Install
+
+    npm install qif
+
 
 ### Usage
 
