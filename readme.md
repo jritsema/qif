@@ -35,7 +35,7 @@ Convert an array of transaction objects (only cash accounts currently supported)
 	var transactions = {};
 
 	var qif = require('qif');	
-	qif.writeToFile(transactions, './out.qif', function (err) {});
+	qif.writeToFile(transactions, './out.qif', function (err, qifData) {});
 
 
 output

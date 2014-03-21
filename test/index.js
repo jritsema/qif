@@ -1,4 +1,5 @@
 var assert = require('assert');
+var fs = require('fs');
 var qif = require('../index.js');
 
 var results = '!Type:Cash\r\n\
@@ -15,29 +16,29 @@ LDining Out:Coffee\r\n\
 ^\r\n\
 ';
 
+var transactions = {
+  cash: [
+    {
+      date: '3/7/2014',
+      amount: -213.39,
+      payee: 'Kroger',
+      memo: 'this is a memo', 
+      category: 'Groceries'
+    }, 
+    {
+      date: '3/6/2014',
+      amount: -8.16,
+      payee: 'Starbucks',
+      category: 'Dining Out:Coffee'
+    }      
+  ]
+};
+
 describe('qif', function() {
 
   describe('write()', function() {    
 
     it('should write data to qif', function() {
-
-      var transactions = {
-        cash: [
-          {
-            date: '3/7/2014',
-            amount: -213.39,
-            payee: 'Kroger',
-            memo: 'this is a memo', 
-            category: 'Groceries'
-          }, 
-          {
-            date: '3/6/2014',
-            amount: -8.16,
-            payee: 'Starbucks',
-            category: 'Dining Out:Coffee'
-          }      
-        ]
-      };
 
       var qifData = qif.write(transactions);
         
@@ -45,5 +46,25 @@ describe('qif', function() {
     });
 
   });
+
+  describe('writeToFile()', function() {    
+
+    it('should write data to qif file', function(done) {
+
+      var file = './test.qif';
+      qif.writeToFile(transactions, file, function (err, qifData) {
+        if (err) throw err;
+
+        assert.equal(qifData, results);
+
+        var qifData = fs.readFileSync(file);
+        assert.equal(qifData, results);
+
+        done();
+      });        
+      
+    });
+
+  });  
 
 });

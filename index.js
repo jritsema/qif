@@ -32,7 +32,12 @@ module.exports = (function () {
     return result;
   };
 
-  var writeToFile = function (transactions, file) {
+  var writeToFile = function (transactions, file, callback) {
+    var data = write(transactions);
+    fs.writeFile(file, data, function (err) {
+      if (err) throw err;
+      callback(undefined, data);
+    });
   };
 
   return {
