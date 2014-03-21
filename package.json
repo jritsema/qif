@@ -1,7 +1,7 @@
 {
   "name": "qif",
   "version": "0.0.1",
-  "description": "Library for working with .qif files",
+  "description": "A simple js library for working with Quicken Interchange Format (.qif) data.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
