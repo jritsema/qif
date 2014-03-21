@@ -4,7 +4,7 @@
   "description": "Library for working with .qif files",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "mocha"
   },
   "keywords": [
     "qif"
