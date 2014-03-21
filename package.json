@@ -9,9 +9,13 @@
   "keywords": [
     "qif"
   ],
-  "author": "John Ritsema",
+  "author": "jritsema",
   "license": "MIT",
   "devDependencies": {
     "mocha": "~1.18.0"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/jritsema/qif"
   }
 }
