@@ -17,33 +17,33 @@ LDining Out:Coffee\r\n\
 
 describe('qif', function() {
 
-	describe('write()', function() {		
+  describe('write()', function() {    
 
-		it('should write data to qif', function() {
+    it('should write data to qif', function() {
 
-			var transactions = {
-		    cash: [
-		      {
-		        date: '3/7/2014',
-		        amount: -213.39,
-		        payee: 'Kroger',
-		        memo: 'this is a memo', 
-		        category: 'Groceries'
-		      }, 
-		      {
-		        date: '3/6/2014',
-		        amount: -8.16,
-		        payee: 'Starbucks',
-		        category: 'Dining Out:Coffee'
-		      }      
-		    ]
-			};
+      var transactions = {
+        cash: [
+          {
+            date: '3/7/2014',
+            amount: -213.39,
+            payee: 'Kroger',
+            memo: 'this is a memo', 
+            category: 'Groceries'
+          }, 
+          {
+            date: '3/6/2014',
+            amount: -8.16,
+            payee: 'Starbucks',
+            category: 'Dining Out:Coffee'
+          }      
+        ]
+      };
 
-			var qifData = qif.write(transactions);
-			  
-		  assert.equal(qifData, results);
-		});
+      var qifData = qif.write(transactions);
+        
+      assert.equal(qifData, results);
+    });
 
-	});
+  });
 
 });
