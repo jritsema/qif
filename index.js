@@ -1,5 +1,5 @@
-module.exports = (function () {   
-  
+module.exports = (function () {
+
   'use strict';
 
   var fs = require('fs');
@@ -24,6 +24,7 @@ module.exports = (function () {
         result += writeField('D', transaction.date);
         result += writeField('T', transaction.amount);
         result += writeField('P', transaction.payee);
+        result += writeField('N', transaction.checknumber);
         result += writeField('L', transaction.category);
         result += writeField('M', transaction.memo);
         result += '^\r\n';
