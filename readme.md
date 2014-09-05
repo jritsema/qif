@@ -17,16 +17,18 @@ Convert an array of transaction objects (only cash accounts currently supported)
       {
         date: '3/7/2014',
         amount: -213.39,
-        payee: 'Kroger',        
+        payee: 'Kroger',
+        memo: 'this is a memo', 
         category: 'Groceries',
-        memo: 'this is a memo'
+        checknumber: 123
       }, 
       {
         date: '3/6/2014',
         amount: -8.16,
         payee: 'Starbucks',
-        category: 'Dining Out:Coffee'
-      }      
+        category: 'Dining Out:Coffee',
+        checknumber: 456
+      }
     ]
 	};
 
@@ -47,12 +49,14 @@ output
     !Type:Cash
     D3/7/2014
     T-213.39
-    Mthis is a memo
     PKroger
+    N123
     LGroceries
+    Mthis is a memo
     ^
     D3/6/2014
     T-8.16
     PStarbucks
+    N456
     LDining Out:Coffee
     ^

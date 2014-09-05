@@ -4,7 +4,6 @@ module.exports = (function () {
 
   var fs = require('fs');
 
-
   function writeField(code, value) {
     var result = '';
     if (value) {
